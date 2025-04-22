@@ -1,0 +1,4 @@
+[[domainConfigurations]]
+apiKey="prefix.secret"
+userId="012345679"
+domains=["www.xpto.com", "xpto.com"]
