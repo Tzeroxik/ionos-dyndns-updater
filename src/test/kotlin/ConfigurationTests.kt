@@ -1,5 +1,5 @@
 import io.github.oshai.kotlinlogging.KotlinLogging
-import online.shroo.ionos.manager.configuration.getResource
+import online.shroo.ionos.manager.configuration.getConfiguration
 import online.shroo.ionos.manager.configuration.toml.Configuration
 import online.shroo.ionos.manager.configuration.toml.Domains
 import online.shroo.ionos.manager.configuration.toml.UpdateConfiguration
@@ -26,7 +26,7 @@ class ConfigurationTests {
         )
 
         val configName = "configuration.example1.toml"
-        val config = getResource<Configuration>(configName)
+        val config = getConfiguration(configName)
         assertNotNull(config)
 
         assertEquals(expected, config)
