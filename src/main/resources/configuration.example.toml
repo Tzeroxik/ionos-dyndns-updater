@@ -1,0 +1,7 @@
+[update]
+frequency = 900000
+
+[[domains]]
+apiKey = "prefix.secret"
+domains = ["www.xpto.com", "xpto.com"]
+description = "xpto"

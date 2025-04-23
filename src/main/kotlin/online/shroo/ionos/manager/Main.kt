@@ -20,6 +20,9 @@ suspend fun main(args: Array<String>) {
 
     val client = DEFAULT_HTTP_CLIENT
 
+    val updateFrequency =
+        configuration.update.frequency.coerceAtLeast(120000L)
+
     for (domain in configuration.domains) {
         coroutineScope {
             val domainDescription = domain.description
@@ -48,7 +51,7 @@ suspend fun main(args: Array<String>) {
                     LOG.error(e) { "Error during domain update" }
                 }
                 LOG.info { "Update iteration finished for $domainDescription" }
-                delay(configuration.update.frequency)
+                delay(updateFrequency)
             }
         }
     }
