@@ -1,4 +1,7 @@
-[[domainConfigurations]]
+[update]
+frequency=900000
+
+[[domains]]
 apiKey="prefix.secret"
-userId="012345679"
 domains=["www.xpto.com", "xpto.com"]
+description="xpto"

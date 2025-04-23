@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>online.shroo</groupId>
-    <artifactId>ionos-manager</artifactId>
+    <artifactId>ionos-dyndns-updater</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -14,7 +14,7 @@
         <kotlin.compiler.jvmTarget>21</kotlin.compiler.jvmTarget>
         <maven.compiler.source>${kotlin.compiler.jvmTarget}</maven.compiler.source>
         <maven.compiler.target>${kotlin.compiler.jvmTarget}</maven.compiler.target>
-        <kotlin.version>2.1.20</kotlin.version>
+        <kotlin.version>2.2.0-Beta1</kotlin.version>
         <jackson.version>2.19.0-rc2</jackson.version>
     </properties>
 
@@ -27,7 +27,6 @@
 
     <dependencyManagement>
         <dependencies>
-
             <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-bom -->
             <dependency>
                 <groupId>org.jetbrains.kotlinx</groupId>
@@ -102,17 +101,22 @@
 
         <dependency>
             <groupId>io.ktor</groupId>
-            <artifactId>ktor-client-cio</artifactId>
+            <artifactId>ktor-client-jetty-jakarta-jvm</artifactId>
         </dependency>
 
         <dependency>
             <groupId>io.ktor</groupId>
-            <artifactId>ktor-client-content-negotiation</artifactId>
+            <artifactId>ktor-client-content-negotiation-jvm</artifactId>
         </dependency>
 
         <dependency>
             <groupId>io.ktor</groupId>
-            <artifactId>ktor-serialization-kotlinx-json</artifactId>
+            <artifactId>ktor-serialization-kotlinx-json-jvm</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-serialization-kotlinx-jvm</artifactId>
         </dependency>
 
         <!-- misc -->
@@ -141,6 +145,11 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.10.0</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-client-jetty</artifactId>
+            <scope>implementation</scope>
         </dependency>
     </dependencies>
 
@@ -172,10 +181,11 @@
 
                 <configuration>
                     <compilerPlugins>
+                        <plugin>kotlinx-serialization</plugin>
                         <plugin>no-arg</plugin>
                     </compilerPlugins>
                     <pluginOptions>
-                        <option>no-arg:annotation=online.shroo.ionos.manager.jackson.annotations.NoArgsCtor</option>
+                        <option>no-arg:annotation=online.shroo.ionos.manager.annotations.NoArgsCtor</option>
                     </pluginOptions>
                 </configuration>
 
@@ -183,6 +193,11 @@
                     <dependency>
                         <groupId>org.jetbrains.kotlin</groupId>
                         <artifactId>kotlin-maven-noarg</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-serialization</artifactId>
                         <version>${kotlin.version}</version>
                     </dependency>
                 </dependencies>
