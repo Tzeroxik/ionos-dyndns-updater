@@ -3,8 +3,6 @@ package online.shroo.ionos.manager.configuration
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.toml.TomlMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import kotlinx.serialization.json.Json.Default.configuration
-import online.shroo.ionos.manager.configuration.DEFAULT_TOML_MAPPER
 import online.shroo.ionos.manager.configuration.toml.Configuration
 import java.io.InputStream
 

@@ -16,17 +16,19 @@ class ConfigurationTests {
             update = UpdateConfiguration(
                 frequency = 900000L,
             ),
-            domains = listOf(Domains(
-                apiKey="prefix.secret",
-                domains=listOf("www.xpto.com", "xpto.com"),
-                description="xpto"
-            )),
+            domains = listOf(
+                Domains(
+                    apiKey = "prefix.secret",
+                    domains = listOf("www.xpto.com", "xpto.com"),
+                    description = "xpto"
+                )
+            ),
         )
 
         val configName = "configuration.example1.toml"
         val config = getResource<Configuration>(configName)
         assertNotNull(config)
-        
+
         assertEquals(expected, config)
 
         logger.info { config }

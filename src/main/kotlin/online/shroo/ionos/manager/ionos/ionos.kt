@@ -2,9 +2,7 @@ package online.shroo.ionos.manager.ionos
 
 import io.ktor.client.*
 import io.ktor.client.request.*
-import io.ktor.http.ContentType
-import io.ktor.http.HttpStatusCode
-import io.ktor.http.contentType
+import io.ktor.http.*
 import online.shroo.ionos.manager.ionos.dns.ddns.DynDns
 import online.shroo.ionos.manager.ionos.dns.ddns.DynDnsRequest
 import online.shroo.ionos.manager.ionos.http.deserialize
