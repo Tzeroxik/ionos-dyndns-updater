@@ -3,7 +3,7 @@
 Create and configure the ``configuration.toml`` file in the ``src/main/kotlin/resources/`` directory
 
 ```TOML[update]
-# Example configuration file, replace what your configuration
+# Example configuration file, replace with your configuration
 frequency = 900000 # frequency of updates (configured to 15 minutes), cannot be less than 2 minutes
 
 [[domains]]
