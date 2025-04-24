@@ -12,6 +12,7 @@ domains = ["www.xpto.com", "xpto.com"] # the domains to update
 description = "xpto" # a description for this dynamic updater
 ```
 
-Compile the program using Maven
+Compile the program using Maven using ``mvn clean install ``, the executable jar (``ionos-dyndns-updater-1.0-SNAPSHOT.jar``) 
+will be inside the ``target`` directory
 
-Run program using ``java -jar ionos-dydns-updater.jar``
+Run program using ``java -jar ionos-dyndns-updater-1.0-SNAPSHOT.jar``
